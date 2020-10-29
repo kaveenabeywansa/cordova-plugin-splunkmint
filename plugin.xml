@@ -15,16 +15,24 @@
   </js-module>
 
   <platform name="ios">
+  
+    <config-file target="config.xml" parent="/*">
+      <feature name="SplunkMint">
+        <param name="onload" value="true" />
+        <param name="ios-package" value="CTSplunkMintPlugin"/>
+      </feature>
+    </config-file>
+
     <header-file src="src/ios/CTSplunkMintPlugin.h"/>
     <source-file src="src/ios/CTSplunkMintPlugin.m"/>
 
     <podspec>
-        <config-file target="config.xml" parent="/*">
+        <config target="config.xml" parent="/*">
             <feature name="SplunkMint">
                 <param name="onload" value="true" />
                 <param name="ios-package" value="CTSplunkMintPlugin"/>
             </feature>
-        </config-file>
+        </config>
         <pods use-frameworks="true">
             <pod name="SplunkMint" spec="~> 5.2.7" />
         </pods>
