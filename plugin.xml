@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="@appx/cordova-plugin-splunkmint"
+        version="3.0.1">
+
+  <name>Splunk MINT</name>
+  <description>CommonTime plugin for Splunk Mint.</description>
+
+  <engines>
+    <engine name="cordova" version=">=9.0.0"/>
+  </engines>
+
+  <js-module src="www/splunkmint.js" name="splunkmint">
+    <clobbers target="splunkmint" />
+  </js-module>
+
+  <platform name="ios">
+    <header-file src="src/ios/CTSplunkMintPlugin.h"/>
+    <source-file src="src/ios/CTSplunkMintPlugin.m"/>
+
+    <podspec>
+        <config target="config.xml" parent="/*">
+            <feature name="SplunkMint">
+                <param name="onload" value="true" />
+                <param name="ios-package" value="CTSplunkMintPlugin"/>
+            </feature>
+        </config>
+        <pods use-frameworks="true">
+            <pod name="SplunkMint" spec="~> 5.2.7" />
+        </pods>
+    </podspec>
+
+    <framework src="libz.dylib"/>
+    <framework src="SystemConfiguration.framework"/>
+    <framework src="CoreTelephony.framework"/>
+    <framework src="CoreLocation.framework"/>
+    <framework src="WebKit.framework"/>
+  </platform>
+  
+
+  <platform name="android">
+    <source-file src="platforms/android/libs/mint-5.2.5.jar" target-dir="libs/" framework="true"/>
+    <source-file src="src/android/com/commontime/mdesign/cordova/plugins/splunkmint/SplunkMint.java" target-dir="src/com/commontime/mdesign/plugins/splunkmint/"/>
+    <source-file src="src/android/com/commontime/mdesign/cordova/plugins/action/Crash.java" target-dir="src/com/commontime/mdesign/plugins/action/"/>
+    <source-file src="src/android/com/commontime/mdesign/cordova/plugins/action/EnableLogCat.java" target-dir="src/com/commontime/mdesign/plugins/action/"/>
+    <source-file src="src/android/com/commontime/mdesign/cordova/plugins/action/LogEvent.java" target-dir="src/com/commontime/mdesign/plugins/action/"/>
+    <source-file src="src/android/com/commontime/mdesign/cordova/plugins/action/LogView.java" target-dir="src/com/commontime/mdesign/plugins/action/"/>
+    <source-file src="src/android/com/commontime/mdesign/cordova/plugins/action/TransactionStart.java" target-dir="src/com/commontime/mdesign/plugins/action/"/>
+    <source-file src="src/android/com/commontime/mdesign/cordova/plugins/action/TransactionCancel.java" target-dir="src/com/commontime/mdesign/plugins/action/"/>
+    <source-file src="src/android/com/commontime/mdesign/cordova/plugins/action/TransactionStop.java" target-dir="src/com/commontime/mdesign/plugins/action/"/>
+    <source-file src="src/android/com/commontime/mdesign/cordova/plugins/action/EnableDebugLog.java" target-dir="src/com/commontime/mdesign/plugins/action/"/>
+    <source-file src="src/android/com/commontime/mdesign/cordova/plugins/action/Flush.java" target-dir="src/com/commontime/mdesign/plugins/action/"/>
+    <source-file src="src/android/com/commontime/mdesign/cordova/plugins/action/SetUserIdentifier.java" target-dir="src/com/commontime/mdesign/plugins/action/"/>
+    <source-file src="src/android/com/commontime/mdesign/cordova/plugins/action/SetUserOptOut.java" target-dir="src/com/commontime/mdesign/plugins/action/"/>
+    <source-file src="src/android/com/commontime/mdesign/cordova/plugins/action/SetFlushOnlyOverWiFi.java" target-dir="src/com/commontime/mdesign/plugins/action/"/>
+    <source-file src="src/android/com/commontime/mdesign/cordova/plugins/action/SplunkMintAction.java" target-dir="src/com/commontime/mdesign/plugins/action/"/>
+    <source-file src="src/android/com/commontime/mdesign/cordova/plugins/factory/ActionFactory.java" target-dir="src/com/commontime/mdesign/plugins/factory/"/>
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="SplunkMint">
+        <param name="android-package" value="com.commontime.mdesign.plugins.splunkmint.SplunkMint"/>
+        <param name="onload" value="true" />
+      </feature>
+    </config-file>
+  </platform>
+
+</plugin>

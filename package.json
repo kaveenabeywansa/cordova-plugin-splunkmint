@@ -1,0 +1,34 @@
+{
+  "name": "@appx/cordova-plugin-splunkmint",
+  "version": "3.0.1",
+  "description": "CommonTime plugin for Splunk Mint.",
+  "types": "./types/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://code.gtnexus.info/projects/EVANG/repos/app-xpress-dev/browse/code/plugins/cordova/gtnexus-cordova-plugin-splunk/com.commontime.cordova.splunk-mint-master?at=refs%2Fheads%2Fdev_plugin_cordova_splunk"
+  },
+  "keywords": [],
+  "author": "AppXpress",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://code.gtnexus.info/projects/EVANG/repos/app-xpress-dev/browse/code/plugins/cordova/gtnexus-cordova-plugin-splunk/com.commontime.cordova.splunk-mint-master?at=refs%2Fheads%2Fdev_plugin_cordova_splunk"
+  },
+  "homepage": "https://code.gtnexus.info/projects/EVANG/repos/app-xpress-dev/browse/code/plugins/cordova/gtnexus-cordova-plugin-splunk/com.commontime.cordova.splunk-mint-master?at=refs%2Fheads%2Fdev_plugin_cordova_splunk",
+  "cordova": {
+    "id": "@appx/cordova-plugin-splunkmint",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "engines": {
+    "name": "cordova",
+    "version": ">=4.1.1"
+  },
+  "publishConfig": {
+    "registry": "http://glib.gtnexus.info/nexus/repository/npm_repo/"
+  }
+}
