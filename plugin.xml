@@ -27,12 +27,6 @@
     <source-file src="src/ios/CTSplunkMintPlugin.m"/>
 
     <podspec>
-        <config target="config.xml" parent="/*">
-            <feature name="SplunkMint">
-                <param name="onload" value="true" />
-                <param name="ios-package" value="CTSplunkMintPlugin"/>
-            </feature>
-        </config>
         <pods use-frameworks="true">
             <pod name="SplunkMint" spec="~> 5.2.7" />
         </pods>
